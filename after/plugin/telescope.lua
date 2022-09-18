@@ -23,6 +23,7 @@ telescope.setup{
         "web",
         "linux",
         "windows",
+        "build",
         "macos"
 	    },
       },
