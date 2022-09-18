@@ -4,7 +4,26 @@ telescope.setup{
   defaults = {
     file_ignore_patterns = {
 	    "target",
-        ".git"
+        ".git",
+        -- for flutter projects
+        ".class",
+        ".log",
+        ".pyc",
+        ".swp",
+        ".DS_Store",
+        ".atom",
+        ".buildlog",
+        ".history",
+        ".svn",
+        "migrate_working_dir",
+        ".dart_tool",
+        ".idea",
+        "android",
+        "ios",
+        "web",
+        "linux",
+        "windows",
+        "macos"
 	    },
       },
 
