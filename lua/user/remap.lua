@@ -60,6 +60,7 @@ key_mapper('n', '<C-k>', ':m .-2<CR>')
 key_mapper('n', '<leader>ff', ':Telescope find_files<CR>')
 key_mapper('n', '<leader>fb', ':Telescope buffers<CR>')
 key_mapper('n', '<leader>fh', ':Telescope help_tags<CR>')
+key_mapper('n', '<leader>fg', ':Telescope live_grep<CR>')
 
 
 -- Gernal lsp maps for all languages
