@@ -24,7 +24,8 @@ telescope.setup{
         "linux",
         "windows",
         "build",
-        "macos"
+        "macos",
+        "assets"
 	    },
       },
 
