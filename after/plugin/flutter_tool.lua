@@ -21,15 +21,10 @@ require("flutter-tools").setup {
   },
   debugger = { -- integrate with nvim dap + install dart code debugger
     enabled = false,
-    run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+    run_via_dap = true, -- use dap instead of a plenary job to run flutter apps
     -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
     -- see |:help dap.set_exception_breakpoints()| for more info
     exception_breakpoints = {},
-    register_configurations = function(paths)
-      require("dap").configurations.dart = {
-          -- TODO : <put here config that you would find in .vscode/launch.json>
-      }
-    end,
   },
   fvm = false, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
   widget_guides = {

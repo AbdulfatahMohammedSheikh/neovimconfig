@@ -63,6 +63,14 @@ key_mapper('n', '<leader>fh', ':Telescope help_tags<CR>')
 key_mapper('n', '<leader>fg', ':Telescope live_grep<CR>')
 
 
+ -- >  Dap and Dap-ui 
+ --
+
+
+key_mapper('n', '<leader>d', ':DapContinue<CR>')
+key_mapper('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
+key_mapper('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
+key_mapper('n', '<leader>de', ':DapTerminate<CR>')
 -- Gernal lsp maps for all languages
 --
 local bufopts = { noremap=true, silent=true, buffer=bufnr }
