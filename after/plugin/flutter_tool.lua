@@ -31,8 +31,8 @@ require("flutter-tools").setup {
     enabled = true,
   },
   closing_tags = {
-    highlight = "ErrorMsg", -- highlight for the closing tag
-    prefix = "--> ", -- character to use for close tag e.g. > Widget
+    highlight = "StatusLine", --use :highlight to get all possible colors for the highlights 
+    prefix = "// ", -- character to use for close tag e.g. > Widget
     enabled = true -- set to false to disable
   },
   dev_log = {
