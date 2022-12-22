@@ -86,3 +86,15 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, bufopts)
 vim.keymap.set('n', ';f', vim.lsp.buf.formatting, bufopts)
+
+-- harpoon 
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+
+vim.keymap.set("n", "<leader>i",ui.toggle_quick_menu)
+vim.keymap.set("n", "<leader>a",mark.add_file)
+vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
