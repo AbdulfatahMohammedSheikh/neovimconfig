@@ -33,8 +33,6 @@ key_mapper('n', '<C-RIGHT>', ':vertical resize +2 <CR>')
 key_mapper('n', '<C-s>', ':vsplit<CR>')
 
  -- >  Split navigation
-key_mapper('n', '<leader>l', ':bnext<CR>')
-key_mapper('n', '<leader>h', ':bprevious<CR>')
 key_mapper('n', '<leader>b', ':bd<CR>')
 
  --     Code props   

@@ -1,9 +1,7 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
+
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {"windwp/nvim-autopairs",
@@ -18,7 +16,9 @@ return require('packer').startup(function(use)
   use 'simrat39/rust-tools.nvim'
 -- Debugging
   use 'mfussenegger/nvim-dap'
-  -- for code compliction
+  use { "rcarriga/nvim-dap-ui" }
+
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim Only required if you have packer configured as `opt` vim.cmd [[packadd packer.nvim]] return require('packer').startup(function(use) Packer can manage itself use 'wbthomason/packer.nvim' use {"windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end} use 'folke/tokyonight.nvim' use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } } use 'neovim/nvim-lspconfig' use 'simrat39/rust-tools.nvim' Debugging use 'mfussenegger/nvim-dap' for code compliction
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
    "folke/trouble.nvim",
    requires = "kyazdani42/nvim-web-devicons",
    }
+
   use {
   'lewis6991/gitsigns.nvim',
   -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
@@ -40,5 +41,14 @@ return require('packer').startup(function(use)
    requires = {
      'nvim-lua/plenary.nvim'
    }
+
 }
+ use ( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+ -- TODO: configure playground
+ use 'nvim-treesitter/playground'
+ use 'ThePrimeagen/harpoon'
+
+
 end)
+
+
