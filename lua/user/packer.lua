@@ -48,11 +48,10 @@ return require('packer').startup(function(use)
  use 'nvim-treesitter/playground'
  use 'ThePrimeagen/harpoon'
 
-use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-}
+ use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+  }
 end)
 
 
