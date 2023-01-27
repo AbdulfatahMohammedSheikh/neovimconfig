@@ -28,9 +28,15 @@ key_mapper('n', '<C-DOWN>', ':resize +2 <CR>')
 key_mapper('n', '<C-lEFT>', ':vertical resize -2 <CR>')
 key_mapper('n', '<C-RIGHT>', ':vertical resize +2 <CR>')
 
- -- >  vsplite
+ -- >  splites
 
-key_mapper('n', '<C-s>', ':vsplit<CR>')
+key_mapper('n', 'sv', ':split<CR>')
+key_mapper('n', 's;', ':vsplit<CR>')
+key_mapper('n', 'so', '<C-w>o')
+key_mapper('n', 'sj', '<C-w>j')
+key_mapper('n', 'sk', '<C-w>k')
+key_mapper('n', 'sl', '<C-w>l')
+key_mapper('n', 'sh', '<C-w>h')
 
  -- >  Split navigation
 key_mapper('n', '<leader>b', ':bd<CR>')

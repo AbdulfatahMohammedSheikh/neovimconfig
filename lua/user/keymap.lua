@@ -17,5 +17,4 @@ M.nnoremap = bind("n")
 M.nnoremap = bind("x")
 M.nnoremap = bind("v")
 M.nnoremap = bind("i")
-
 return M
