@@ -1,5 +1,5 @@
 local  nnoremap = require("user.keymap").nnoremap
-local key_mapper= function(mode, key, result)
+local set_keymap= function(mode, key, result)
   vim.api.nvim_set_keymap(
     mode,
     key,
@@ -8,73 +8,73 @@ local key_mapper= function(mode, key, result)
   )
 end
 -- initial settup and mappting
-key_mapper('i', 'jj', '<ESC>')
+set_keymap('i', 'jj', '<ESC>')
 -- use jj as a hotkey for exiting termaianl mode
-key_mapper('t', 'jj', '<C-\\><C-n>')
-key_mapper('n', '<leader>s', ':w<CR>')
-key_mapper('n', '<leader>;', ':q<CR>')
-key_mapper('n', '<leader>e', ':wq<CR>')
-key_mapper('n', '<leader>o', ':e %:h<CR>')
-key_mapper('n', '<leader>p', ':Ex<CR>')
-key_mapper('n', '<leader>t', ':so<CR>')
-key_mapper('n', '<leader>v', ':belowright terminal<CR>')
+set_keymap('t', 'jj', '<C-\\><C-n>')
+set_keymap('n', '<leader>s', ':w<CR>')
+set_keymap('n', '<leader>;', ':q<CR>')
+set_keymap('n', '<leader>e', ':wq<CR>')
+set_keymap('n', '<leader>o', ':e %:h<CR>')
+set_keymap('n', '<leader>p', ':Ex<CR>')
+set_keymap('n', '<leader>t', ':so<CR>')
+set_keymap('n', '<leader>v', ':belowright terminal<CR>')
 
  --     Windows and navigation 
  --
  -- > Resizing window
 
-key_mapper('n', '<C-UP>', ':resize -2 <CR>')
-key_mapper('n', '<C-DOWN>', ':resize +2 <CR>')
-key_mapper('n', '<C-lEFT>', ':vertical resize -2 <CR>')
-key_mapper('n', '<C-RIGHT>', ':vertical resize +2 <CR>')
+set_keymap('n', '<C-UP>', ':resize -2 <CR>')
+set_keymap('n', '<C-DOWN>', ':resize +2 <CR>')
+set_keymap('n', '<C-lEFT>', ':vertical resize -2 <CR>')
+set_keymap('n', '<C-RIGHT>', ':vertical resize +2 <CR>')
 
  -- >  splites
 
-key_mapper('n', 'sv', ':split<CR>')
-key_mapper('n', 's;', ':vsplit<CR>')
-key_mapper('n', 'so', '<C-w>o')
-key_mapper('n', 'sj', '<C-w>j')
-key_mapper('n', 'sk', '<C-w>k')
-key_mapper('n', 'sl', '<C-w>l')
-key_mapper('n', 'sh', '<C-w>h')
+set_keymap('n', 'sv', ':split<CR>')
+set_keymap('n', 's;', ':vsplit<CR>')
+set_keymap('n', 'so', '<C-w>o')
+set_keymap('n', 'sj', '<C-w>j')
+set_keymap('n', 'sk', '<C-w>k')
+set_keymap('n', 'sl', '<C-w>l')
+set_keymap('n', 'sh', '<C-w>h')
 
  -- >  Split navigation
-key_mapper('n', '<leader>b', ':bd<CR>')
+set_keymap('n', '<leader>b', ':bd<CR>')
 
  --     Code props   
  -- 
  -- > Quickfix list
  --
 
-key_mapper('n', '<leader>q', ':copen<CR>')
-key_mapper('n', '<leader>k', ':cprev<CR>')
-key_mapper('n', '<leader>j', ':cnext<CR>')
+set_keymap('n', '<leader>q', ':copen<CR>')
+set_keymap('n', '<leader>k', ':cprev<CR>')
+set_keymap('n', '<leader>j', ':cnext<CR>')
 
  -- >  Formating 
  --
 
-key_mapper('n', '<C-j>', ':m .+1<CR>')
-key_mapper('n', '<C-k>', ':m .-2<CR>')
+set_keymap('n', '<C-j>', ':m .+1<CR>')
+set_keymap('n', '<C-k>', ':m .-2<CR>')
 
 
  -- >  Telescope 
  --
 
 -- Find files using Telescope command-line sugar.
-key_mapper('n', '<leader>ff', ':Telescope find_files<CR>')
-key_mapper('n', '<leader>fb', ':Telescope buffers<CR>')
-key_mapper('n', '<leader>fh', ':Telescope help_tags<CR>')
-key_mapper('n', '<leader>fg', ':Telescope live_grep<CR>')
+set_keymap('n', '<leader>ff', ':Telescope find_files<CR>')
+set_keymap('n', '<leader>fb', ':Telescope buffers<CR>')
+set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>')
+set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>')
 
 
  -- >  Dap and Dap-ui 
  --
 
 
-key_mapper('n', '<leader>d', ':DapContinue<CR>')
-key_mapper('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
-key_mapper('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
-key_mapper('n', '<leader>de', ':DapTerminate<CR>')
+set_keymap('n', '<leader>d', ':DapContinue<CR>')
+set_keymap('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
+set_keymap('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
+set_keymap('n', '<leader>de', ':DapTerminate<CR>')
 -- Gernal lsp maps for all languages
 --
 local bufopts = { noremap=true, silent=true, buffer=bufnr }
