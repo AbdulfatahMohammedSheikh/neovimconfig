@@ -56,6 +56,9 @@ set_keymap('n', '<leader>j', ':cnext<CR>')
 set_keymap('n', '<C-j>', ':m .+1<CR>')
 set_keymap('n', '<C-k>', ':m .-2<CR>')
 
+ -- >  chage file permesions 
+ --
+set_keymap('n', '<leader>x', ':!chmod +x %<CR>')
 
  -- >  Telescope 
  --
