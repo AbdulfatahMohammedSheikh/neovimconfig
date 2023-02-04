@@ -51,6 +51,15 @@ require('lspconfig')['emmet_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    vim.lsp.start({
+      name = 'bash-language-server',
+      cmd = { 'bash-language-server', 'start' },
+    })
+  end,
+})
 require('lspconfig')['html'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
