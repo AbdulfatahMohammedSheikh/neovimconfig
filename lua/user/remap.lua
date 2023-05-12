@@ -9,8 +9,6 @@ local set_keymap = function(mode, key, result)
 end
 -- initial settup and mappting
 set_keymap('i', 'jj', '<ESC>')
--- remove char and do not add it to the regester
-set_keymap('n', 'x', '_x')
 -- go back to the previous file
 set_keymap('n', "<leader>'", '<C-6>')
 -- use jj as a hotkey for exiting termaianl mode
