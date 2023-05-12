@@ -130,4 +130,7 @@ vim.keymap.set("n", "<leader>fr", ":FlutterReload<CR>")
 vim.keymap.set("n", "<leader>fd", ":FlutterDevices<CR>")
 vim.keymap.set("n", "<leader>ft", ":FlutterDevTools<CR>")
 
+-- Hop 
 
+vim.keymap.set("n", "<leader>hw", ":HopWord<CR>")
+vim.keymap.set("n", "<leader>hl", ":HopLine<CR>")
