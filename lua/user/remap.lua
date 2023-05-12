@@ -9,6 +9,10 @@ local set_keymap = function(mode, key, result)
 end
 -- initial settup and mappting
 set_keymap('i', 'jj', '<ESC>')
+-- remove char and do not add it to the regester
+set_keymap('n', 'x', '_x')
+-- go back to the previous file
+set_keymap('n', "<leader>'", '<C-6>')
 -- use jj as a hotkey for exiting termaianl mode
 set_keymap('t', 'jj', '<C-\\><C-n>')
 set_keymap('n', '<leader>s', ':w<CR>')
@@ -30,6 +34,12 @@ set_keymap('n', '<C-DOWN>', ':resize +2 <CR>')
 set_keymap('n', '<C-lEFT>', ':vertical resize -2 <CR>')
 set_keymap('n', '<C-RIGHT>', ':vertical resize +2 <CR>')
 
+-- >  increament and decreament numbers
+
+set_keymap('n', '<leader>=', '<C-a>') -- in my keyboard + and = is in the same key so if is want + is must also use Shift
+set_keymap('n', '<leader>-', '<C-x>')
+
+
 -- >  splites
 
 set_keymap('n', 'sv', ':split<CR>')
@@ -39,6 +49,16 @@ set_keymap('n', 'sj', '<C-w>j')
 set_keymap('n', 'sk', '<C-w>k')
 set_keymap('n', 'sl', '<C-w>l')
 set_keymap('n', 'sh', '<C-w>h')
+set_keymap('n', 'se', '<C-w>=') -- make the size of splites equal 
+set_keymap('n', 'sd', ':close<CR>') -- close current split
+
+
+-- >  Tabs
+-- i don't use tabs that much the best way to deal with multipule file is by using harpoon 
+set_keymap('n', 'at', ':tabnew<CR>') -- close current split
+set_keymap('n', ';t', ':tabclose<CR>') -- close current split
+set_keymap('n', 'nt', ':tabn<CR>') -- close current split
+set_keymap('n', 'pt', ':tabp<CR>') -- close current split
 
 -- >  Split navigation
 set_keymap('n', '<leader>b', ':bd<CR>')

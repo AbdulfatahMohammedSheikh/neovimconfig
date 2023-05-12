@@ -1,15 +1,21 @@
-vim.opt.nu =true
-vim.opt.relativenumber = true
-vim.opt.autoindent = true
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.hlsearch =false
-vim.opt.cursorline = true
-vim.opt.scrolloff = 8
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
+local opt = vim.opt
+
+
+opt.nu = true
+opt.relativenumber = true
+opt.autoindent = true
+opt.mouse = 'a'
+opt.clipboard = 'unnamedplus'
+opt.hlsearch = false
+opt.cursorline = true
+opt.scrolloff = 8
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.smartindent = true
+opt.ignorecase = true
+opt.wrap = false
+opt.signcolumn = "yes"
+
 vim.g.mapleader = " "
