@@ -20,7 +20,7 @@ set_keymap('n', '<leader>t', ':so<CR>')
 set_keymap('n', '<leader>v', ':belowright terminal<CR>')
 
 -- for fast rename and refactoring
-set_keymap('n', '<leader>h', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<left><left><left>]])
+set_keymap('n', '<leader>u', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<left><left><left>]])
 --     Windows and navigation
 --
 -- > Resizing window
@@ -117,3 +117,7 @@ vim.keymap.set("n", "<leader>fs", ":FlutterRestart<CR>")
 vim.keymap.set("n", "<leader>fr", ":FlutterReload<CR>")
 vim.keymap.set("n", "<leader>fd", ":FlutterDevices<CR>")
 vim.keymap.set("n", "<leader>ft", ":FlutterDevTools<CR>")
+
+-- Hop more remaps
+vim.keymap.set("n", "<leader>hw", ":HopWord<CR>")
+vim.keymap.set("n", "<leader>hl", ":HopLine<CR>")
