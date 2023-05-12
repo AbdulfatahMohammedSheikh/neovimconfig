@@ -51,12 +51,6 @@ set_keymap('n', 'se', '<C-w>=') -- make the size of splites equal
 set_keymap('n', 'sd', ':close<CR>') -- close current split
 
 
--- >  Tabs
--- i don't use tabs that much the best way to deal with multipule file is by using harpoon 
-set_keymap('n', 'at', ':tabnew<CR>') -- close current split
-set_keymap('n', ';t', ':tabclose<CR>') -- close current split
-set_keymap('n', 'nt', ':tabn<CR>') -- close current split
-set_keymap('n', 'pt', ':tabp<CR>') -- close current split
 
 -- >  Split navigation
 set_keymap('n', '<leader>b', ':bd<CR>')
@@ -136,6 +130,4 @@ vim.keymap.set("n", "<leader>fr", ":FlutterReload<CR>")
 vim.keymap.set("n", "<leader>fd", ":FlutterDevices<CR>")
 vim.keymap.set("n", "<leader>ft", ":FlutterDevTools<CR>")
 
--- Hop more remaps
-vim.keymap.set("n", "<leader>hw", ":HopWord<CR>")
-vim.keymap.set("n", "<leader>hl", ":HopLine<CR>")
+
