@@ -49,13 +49,6 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     }
-
-    use {
-        'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
-            -- you can configure Hop the way you like here; see :h hop-config
-    }
-
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
