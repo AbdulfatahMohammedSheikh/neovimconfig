@@ -5,6 +5,7 @@ return require('packer').startup(function(use)
     use { "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end }
     use 'folke/tokyonight.nvim'
+    use 'EdenEast/nightfox.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
