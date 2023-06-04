@@ -83,6 +83,7 @@ set_keymap('n', '<leader>ff', ':Telescope find_files<CR>')
 set_keymap('n', '<leader>fb', ':Telescope buffers<CR>')
 set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>')
 set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>')
+set_keymap('n', '<leader>fj', ':Telescope grep_string<CR>')
 
 
 -- >  Dap and Dap-ui
