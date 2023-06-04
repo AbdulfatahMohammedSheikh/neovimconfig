@@ -18,7 +18,18 @@ return require('packer').startup(function(use)
     use { "rcarriga/nvim-dap-ui" }
 
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/nvim-cmp'
+    use({
+        "hrsh7th/nvim-cmp",
+        config = [[require('config.nvim-cmp')]],
+        requires = {
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-omni",
+        },
+    })
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -60,8 +71,16 @@ return require('packer').startup(function(use)
     }
 
 
+
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
+    }
+
+
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use {
+        'L3MON4D3/LuaSnip',
+        config = function() require('config.snippets') end,
     }
 end)
