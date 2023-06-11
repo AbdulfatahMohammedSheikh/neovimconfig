@@ -12,6 +12,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
            call setreg('t', "//TODO: ")
            call setreg('f', "//FIXME: ")
            call setreg('b', "//BUG: ")
+
+           " clear the use registers in ather outocommands to avoid sharing data between autocommand
+		   call setreg('a', '', 'al')
         ]])
     end,
 })
