@@ -9,6 +9,7 @@ local set_keymap = function(mode, key, result)
 end
 -- initial settup and mappting
 set_keymap('i', 'jj', '<ESC>')
+set_keymap('n', 'y', 'yy')
 -- go back to the previous file
 set_keymap('n', "<leader>'", '<C-6>')
 -- use jj as a hotkey for exiting termaianl mode
@@ -51,6 +52,10 @@ set_keymap('n', 'se', '<C-w>=') -- make the size of splites equal
 set_keymap('n', 'sd', ':close<CR>') -- close current split
 
 
+-- >  Code Floding
+
+set_keymap('v', 'sj', 'zf')
+set_keymap('v', 'sk', 'zo')
 
 -- >  Split navigation
 set_keymap('n', '<leader>b', ':bd<CR>')
