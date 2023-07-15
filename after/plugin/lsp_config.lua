@@ -77,7 +77,7 @@ require('lspconfig')['lua_ls'].setup {
     flags = lsp_flags,
 }
 
-require('lspconfig')['gopls'].setup {
+require('lspconfig')['pyright'].setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
