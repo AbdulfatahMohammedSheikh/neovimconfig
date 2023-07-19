@@ -54,8 +54,8 @@ set_keymap('n', 'sd', ':close<CR>') -- close current split
 
 -- >  Code Floding
 
-set_keymap('v', 'sj', 'zf')
-set_keymap('v', 'sk', 'zo')
+set_keymap('v', ';j', 'zf')
+set_keymap('v', ';k', 'zo')
 
 -- >  Split navigation
 set_keymap('n', '<leader>b', ':bd<CR>')
