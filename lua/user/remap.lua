@@ -10,6 +10,9 @@ end
 -- initial settup and mappting
 set_keymap('i', 'jj', '<ESC>')
 set_keymap('n', 'y', 'yy')
+set_keymap('n', 'x', '"_x')
+set_keymap('n', '<C-a>', 'gg<S-v>G')
+
 -- go back to the previous file
 set_keymap('n', "<leader>'", '<C-6>')
 -- use jj as a hotkey for exiting termaianl mode
