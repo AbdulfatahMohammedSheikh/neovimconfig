@@ -41,6 +41,7 @@ set_keymap('n', '<leader>-', '<C-x>')
 
 -- >  splites
 
+set_keymap("n", "<Space>", "<C-w>w")
 set_keymap('n', 'sv', ':split<CR>')
 set_keymap('n', 's;', ':vsplit<CR>')
 set_keymap('n', 'so', '<C-w>o')
@@ -140,3 +141,11 @@ vim.keymap.set("n", "<leader>ft", ":FlutterDevTools<CR>")
 
 vim.keymap.set("n", "<leader>hw", ":HopWord<CR>")
 vim.keymap.set("n", "<leader>hl", ":HopLine<CR>")
+
+
+-- Window movement
+vim.keymap.set('', '<C-w><left>', '<C-w><')
+vim.keymap.set('', '<C-w><right>', '<C-w>>')
+vim.keymap.set('', '<C-w><up>', '<C-w>+')
+vim.keymap.set('', '<C-w><down>', '<C-w>-')
+
