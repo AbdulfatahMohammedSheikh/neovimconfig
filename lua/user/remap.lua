@@ -13,6 +13,9 @@ set_keymap('n', 'y', 'yy')
 set_keymap('n', 'x', '"_x')
 set_keymap('n', '<C-a>', 'gg<S-v>G')
 
+-- TODO: this is a feature for go but can be used instead of snipet engne
+--set_keymap('n', '<leader>ee', 'oif err != nil {<CR>}<Esc>Oreturn err')
+
 -- go back to the previous file
 set_keymap('n', "<leader>'", '<C-6>')
 -- use jj as a hotkey for exiting termaianl mode
@@ -52,7 +55,7 @@ set_keymap('n', 'sj', '<C-w>j')
 set_keymap('n', 'sk', '<C-w>k')
 set_keymap('n', 'sl', '<C-w>l')
 set_keymap('n', 'sh', '<C-w>h')
-set_keymap('n', 'se', '<C-w>=') -- make the size of splites equal 
+set_keymap('n', 'se', '<C-w>=')     -- make the size of splites equal
 set_keymap('n', 'sd', ':close<CR>') -- close current split
 
 
@@ -140,7 +143,7 @@ vim.keymap.set("n", "<leader>fr", ":FlutterReload<CR>")
 vim.keymap.set("n", "<leader>fd", ":FlutterDevices<CR>")
 vim.keymap.set("n", "<leader>ft", ":FlutterDevTools<CR>")
 
--- Hop 
+-- Hop
 
 vim.keymap.set("n", "<leader>hw", ":HopWord<CR>")
 vim.keymap.set("n", "<leader>hl", ":HopLine<CR>")
@@ -151,4 +154,3 @@ vim.keymap.set('', '<C-w><left>', '<C-w><')
 vim.keymap.set('', '<C-w><right>', '<C-w>>')
 vim.keymap.set('', '<C-w><up>', '<C-w>+')
 vim.keymap.set('', '<C-w><down>', '<C-w>-')
-
