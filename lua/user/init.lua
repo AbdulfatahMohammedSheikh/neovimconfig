@@ -1,1 +1,1 @@
-require("user.remap")
+require('user.core')
