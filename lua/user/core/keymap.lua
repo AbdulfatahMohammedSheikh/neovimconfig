@@ -38,7 +38,7 @@ vim.keymap.set('n', 'sj', '<C-w>j')
 vim.keymap.set('n', 'sk', '<C-w>k')
 vim.keymap.set('n', 'sl', '<C-w>l')
 vim.keymap.set('n', 'sh', '<C-w>h')
-vim.keymap.set('n', 'se', '<C-w>=') -- make the size of splites equal 
+vim.keymap.set('n', 'se', '<C-w>=')     -- make the size of splites equal
 vim.keymap.set('n', 'sd', ':close<CR>') -- close current split
 
 
@@ -66,3 +66,23 @@ vim.keymap.set('n', '<C-k>', ':m .-2<CR>')
 --
 vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>')
 
+
+
+-- >  Gneral lsp config to tell nvim that if we did not configer the langualge server to just
+-- do its best and use the fellowing config as default
+--
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder)
+vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder)
+vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
+vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.references)
+vim.keymap.set('n', ';f', function() vim.lsp.buf.format { async = true } end)
