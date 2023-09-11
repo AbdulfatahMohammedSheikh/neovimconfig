@@ -1,5 +1,6 @@
 return {
     'phaazon/hop.nvim',
+    event = "InsertEnter",
     config = function()
         local hop = require('hop')
         hop.setup()

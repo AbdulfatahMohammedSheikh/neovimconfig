@@ -1,5 +1,6 @@
 return {
     "folke/trouble.nvim",
+    event = "InsertEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         -- your configuration comes here
