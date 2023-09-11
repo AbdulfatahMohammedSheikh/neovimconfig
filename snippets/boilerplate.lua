@@ -20,6 +20,9 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
+-- TODO: remove unnnessary code
+
+
 -- If you're reading this file for the first time, best skip to around line 190
 -- where the actual snippet-definitions start.
 
@@ -188,7 +191,7 @@ end
 --
 -- opts can also specify a key. By passing an unique key to each add_snippets, it's possible to reload snippets by
 -- re-`:luafile`ing the file in which they are defined (eg. this one).
-ls.add_snippets("all" , {
+ls.add_snippets("all", {
     -- trigger is `fn`, second argument to snippet-constructor are the nodes to insert into the buffer on expansion.
     --
     s("todo", {
@@ -212,23 +215,7 @@ ls.add_snippets("all" , {
         i(1, "enter todo")
     }),
 
-    -- Parsing snippets: First parameter: Snippet-Trigger, Second: Snippet body.
-    -- Placeholders are parsed into choices with 1. the placeholder text(as a snippet) and 2. an empty string.
-    -- This means they are not SELECTed like in other editors/Snippet engines.
-    ls.parser.parse_snippet(
-        "lspsyn",
-        "Wow! This ${1:Stuff} really ${2:works. ${3:Well, a bit.}}"
-    ),
 
-    -- When wordTrig is set to false, snippets may also expand inside other words.
-    ls.parser.parse_snippet(
-        { trig = "te", wordTrig = false },
-        "${1:cond} ? ${2:true} : ${3:false}"
-    ),
-    -- When regTrig is set, trig is treated like a pattern, this snippet will expand after any number.
-    ls.parser.parse_snippet({ trig = "%d", regTrig = true }, "A Number!!"),
-    -- Using the condition, it's possible to allow expansion only in specific cases.
-    -- Shorthand for repeating the text in a given node.
 }, {
     key = "all",
 })
