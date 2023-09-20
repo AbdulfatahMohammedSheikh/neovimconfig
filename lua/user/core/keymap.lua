@@ -62,6 +62,11 @@ vim.keymap.set('n', '<leader>l', ':lopen<CR>')
 vim.keymap.set('n', '<C-j>', ':m .+1<CR>')
 vim.keymap.set('n', '<C-k>', ':m .-2<CR>')
 
+-- >  Code Floding
+--
+
+vim.keymap.set('v', 'j;', 'zf')
+vim.keymap.set('v', 'k;', 'zo')
 -- >  chage file permesions
 --
 vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>')
