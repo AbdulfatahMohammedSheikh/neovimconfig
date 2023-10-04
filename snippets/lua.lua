@@ -233,7 +233,107 @@ ls.add_snippets("lua", {
     key = "lua",
 })
 
+
+-- FIXME: create a file for each langage and make sure that the code before creatring the snoppets is reusable among the different files
+
+ls.add_snippets("go", {
+
+    s("fn", {
+        t("func "),
+        i(1, "name"),
+
+        t(" ("),
+        i(2, "args"),
+        t(" ) "),
+        t({ " {", "\t" }),
+        t(" } "),
+    }),
+
+    s("struct", {
+        t("type "),
+        i(1, "name"),
+        t({ " struct {", "\t}" })
+    }),
+
+    s("for", {
+        t("for "),
+        i(1, "condition"),
+        t({ "{", "\t }" })
+    }),
+
+    s("range", {
+        t("for "),
+        i(1, "condition"),
+        t(":= range "),
+        i(2, "iter"),
+        t({ "{", "\t }" })
+    }),
+
+    s("if", {
+        t("if "),
+        i(1, "condition"),
+        t({ "{ ", "\t }" })
+    }),
+
+    s("ifsels", {
+        t("if "),
+        i(1, "condition"),
+        t({ "{ ", "\t }esle {", " \t", "}" }),
+    }),
+
+}
+, {
+    key = "go",
+})
+
+
+
+ls.add_snippets("rust", {
+
+    s("async", {
+        t("async fn "),
+        i(1, "name"),
+        t(" ("),
+        i(2, "args"),
+        t(" ) "),
+        t({ " {", "\t" }),
+        t(" } "),
+    }),
+    -- async funtion with return type
+    s("assync", {
+        t("async fn "),
+        i(1, "name"),
+        t(" ("),
+        i(2, "args"),
+        t(" ) ->"),
+        i(3, "value"),
+        t({ " {", "\t" }),
+        t(" } "),
+
+    }),
+}, {
+    key = "rust",
+})
+
 -- set type to "autosnippets" for adding autotriggered snippets.
+ls.add_snippets("rust", {
+    s("autotrigger", {
+        t("autosnippet"),
+    }),
+}, {
+    type = "autosnippets",
+    key = "all_auto",
+})
+
+ls.add_snippets("go", {
+    s("autotrigger", {
+        t("autosnippet"),
+    }),
+}, {
+    type = "autosnippets",
+    key = "lua_auto",
+})
+
 ls.add_snippets("lua", {
     s("autotrigger", {
         t("autosnippet"),
@@ -242,6 +342,7 @@ ls.add_snippets("lua", {
     type = "autosnippets",
     key = "lua_auto",
 })
+
 ls.filetype_extend("lua", { "c" })
 -- in a cpp file: search c-snippets, then all-snippets only (no cpp-snippets!!).
 ls.filetype_set("cpp", { "c" })
