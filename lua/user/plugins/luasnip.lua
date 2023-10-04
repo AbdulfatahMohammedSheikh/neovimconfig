@@ -37,9 +37,9 @@ return {
 
         -- Key Mapping --{{{
 
-        vim.keymap.set({ "i", "s" }, "<c-u>", '<cmd>lua require("luasnip.extras.select_choice")()<cr><C-c><C-c>')
+        vim.keymap.set({ "i", "s" }, "snu", '<cmd>lua require("luasnip.extras.select_choice")()<cr><C-c><C-c>')
 
-        vim.keymap.set({ "i", "s" , "n"}, "<a-p>", function()
+        vim.keymap.set({ "i", "s" , "n"}, "snp", function()
             if ls.expand_or_jumpable() then
                 ls.expand()
             end
@@ -57,18 +57,18 @@ return {
 
         vim.keymap.set({ "i", "s" , "n" }, "<a-y>", "<Esc>o", { silent = true })
 
-        vim.keymap.set({ "i", "s" , "n" }, "<a-k>", function()
+        vim.keymap.set({ "i", "s" , "n" }, "snl", function()
             if ls.jumpable(1) then
                 ls.jump(1)
             end
         end, { silent = true })
-        vim.keymap.set({ "i", "s" , "n" }, "<a-j>", function()
+        vim.keymap.set({ "i", "s" , "n" }, "snh", function()
             if ls.jumpable(-1) then
                 ls.jump(-1)
             end
         end, { silent = true })
 
-        vim.keymap.set({ "i", "s" , "n" }, "<a-l>", function()
+        vim.keymap.set({ "i", "s" , "n" }, "snj", function()
             if ls.choice_active() then
                 ls.change_choice(1)
             else
@@ -78,7 +78,7 @@ return {
                 print(time)
             end
         end)
-        vim.keymap.set({ "i", "s" , "n" }, "<a-h>", function()
+        vim.keymap.set({ "i", "s" , "n" }, "snk", function()
             if ls.choice_active() then
                 ls.change_choice(-1)
             end
