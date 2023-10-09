@@ -44,6 +44,7 @@ return {
 
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
         require("mason").setup()
@@ -52,7 +53,7 @@ return {
             -- This is the default in Nvim 0.7+
             debounce_text_changes = 150,
         }
-        require('lspconfig')['rust_analyzer'].setup {
+        lspconfig['rust_analyzer'].setup {
             --            on_attach = on_attach,
             flags = lsp_flags,
             -- Server-specific settings...
@@ -60,7 +61,7 @@ return {
                 ["rust-analyzer"] = {}
             }
         }
-        require('lspconfig')['lua_ls'].setup {
+        lspconfig['lua_ls'].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             flags = lsp_flags,
@@ -73,10 +74,46 @@ return {
             }
         }
 
-        require('lspconfig')['gopls'].setup {
+        lspconfig['gopls'].setup {
             capabilities = capabilities,
             on_attach = on_attach,
             flags = lsp_flags
+        }
+
+        lspconfig["tsserver"].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags
+        }
+
+
+        lspconfig['emmet_ls'].setup {
+            capabilities = capabilities,
+            filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte",
+                "pug", "typescriptreact", "vue" },
+            init_options = {
+                html = {
+                    options = {
+                        ["bem.enabled"] = true,
+                    }
+                }
+            }
+        }
+
+        lspconfig['cssls'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags
+        }
+
+        lspconfig['tailwindcss'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags
+        }
+
+        lspconfig['html'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags
+
         }
     end,
 
