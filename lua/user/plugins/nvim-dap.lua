@@ -34,9 +34,5 @@ return {
                 cwd = "${workspaceFolder}",
             }
         }
-
-        vim.keymap.set('n', '<leader>d', ':DapContinue<CR>')
-        vim.keymap.set('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
-        vim.keymap.set('n', '<leader>de', ':DapTerminate<CR>')
     end,
 }
