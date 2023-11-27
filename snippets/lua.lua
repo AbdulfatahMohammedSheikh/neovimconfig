@@ -287,7 +287,6 @@ ls.add_snippets("go", {
 })
 
 
-
 ls.add_snippets("rust", {
 
     s("async", {
@@ -313,6 +312,47 @@ ls.add_snippets("rust", {
     }),
 }, {
     key = "rust",
+})
+
+ls.add_snippets("typescript", {
+    s("log", {
+        t("console.log("),
+        i(1, "log"),
+        t(");")
+    }),
+    s("table", {
+
+        t("console.table("),
+        i(1, "log"),
+        t(");")
+    }),
+    s("trace", {
+
+        t("console.trace("),
+        i(1, "log"),
+        t(");")
+    }),
+    s("fn", {
+        t("function "),
+        i(1, "name"),
+        t(" ( "),
+        i(2, "args"),
+        t({ ") {", "\t" }),
+        t(" } "),
+    }),
+
+    s("type", {
+        t("type "),
+        i(1, "Type"),
+        t({ "= {", "\t" }),
+        i(2, "Value"),
+
+        t({ "\t", "};" }),
+    }),
+    -- creating react component
+    s("comp", {}),
+}, {
+    key = "typescript",
 })
 
 -- set type to "autosnippets" for adding autotriggered snippets.
@@ -342,6 +382,17 @@ ls.add_snippets("lua", {
     type = "autosnippets",
     key = "lua_auto",
 })
+
+
+ls.add_snippets("ts", {
+    s("autotrigger", {
+        t("autosnippet"),
+    }),
+}, {
+    type = "autosnippets",
+    key = "lua_auto",
+})
+
 
 ls.filetype_extend("lua", { "c" })
 -- in a cpp file: search c-snippets, then all-snippets only (no cpp-snippets!!).
