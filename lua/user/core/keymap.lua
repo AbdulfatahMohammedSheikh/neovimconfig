@@ -65,8 +65,10 @@ vim.keymap.set('n', '<C-k>', ':m .-2<CR>')
 -- >  Code Floding
 --
 
-vim.keymap.set('v', 'j;', 'zf')
-vim.keymap.set('v', 'k;', 'zo')
+-- did not remove it just to remomber code folding
+-- vim.keymap.set('v', '<C-UP>', 'zf')
+-- vim.keymap.set('v', '<C-DOWN>', 'zo')
+--
 -- >  chage file permesions
 --
 vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>')
@@ -80,7 +82,7 @@ vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+vim.keymap.set('n', '<C-l>', vim.lsp.buf.signature_help)
 vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder)
 vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder)
 vim.keymap.set('n', '<space>wl', function()
