@@ -1,10 +1,14 @@
 return {
     "nvim-lualine/lualine.nvim",
     config = function()
+        local custom_gruvbox = require 'lualine.themes.gruvbox'
+
+        -- Change the background of lualine_c section for normal mode
+        custom_gruvbox.normal.c.bg = '#112233'
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = 'auto',
+                theme = custom_gruvbox,
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
                 disabled_filetypes = {
