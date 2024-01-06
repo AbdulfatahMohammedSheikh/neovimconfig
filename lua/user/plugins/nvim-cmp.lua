@@ -2,22 +2,24 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-buffer",       -- source for text in buffer
-        "hrsh7th/cmp-path",         -- source for file system paths
-        "L3MON4D3/LuaSnip",         -- snippet engine
-        "saadparwaiz1/cmp_luasnip", -- for autocompletion
+        "hrsh7th/cmp-buffer", -- source for text in buffer
+        "hrsh7th/cmp-path",   -- source for file system paths
+        -- "L3MON4D3/LuaSnip",         -- snippet engine
         "hrsh7th/cmp-nvim-lsp",
         --    "rafamadriz/friendly-snippets",
     },
     config = function()
         local cmp = require("cmp")
-        local luasnip = require("luasnip")
+        -- local luasnip = require("luasnip")
+        --
 
 
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    luasnip.lsp_expand(args.body) -- For `luasnip` users.
+                    -- luasnip.lsp_expand(args.body) -- For `luasnip` users.
+                    require('snippy').expand_snippet(args.body) -- For `snippy` users.
+                    --
                 end,
             },
 
@@ -37,7 +39,7 @@ return {
                 })
             },
             sources = {
-                { name = "luasnip" },
+                { name = 'snippy' }, -- For snippy users.
                 { name = "nvim_lsp", max_item_count = 6 },
                 { name = "nvim_lua" },
                 { name = "path" },
