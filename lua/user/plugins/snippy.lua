@@ -10,7 +10,7 @@ return {
                     ['<S-Tab>'] = 'previous',
                 },
                 nx = {
-                   ['<leader>x'] = 'cut_text',
+                   ['<leader>c'] = 'cut_text',
                 },
             },
         })
