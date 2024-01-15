@@ -91,7 +91,7 @@ end)
 vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition)
 vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
 vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', '<leader>r', vim.lsp.buf.references)
+vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references)
 vim.keymap.set('n', ';f', function() vim.lsp.buf.format { async = true } end)
 
 -- Dap
