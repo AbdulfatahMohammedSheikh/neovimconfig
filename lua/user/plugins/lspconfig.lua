@@ -58,20 +58,7 @@ return {
             flags = lsp_flags,
             -- Server-specific settings...
             settings = {
-                ["rust-analyzer"] = {
-
-                    -- for leptos
-
-                    procMacro = {
-                        ignored = {
-                            leptos_macro = {
-                                -- optional: --
-                                -- "component",
-                                "server",
-                            },
-                        },
-                    }
-                }
+                ["rust-analyzer"] = {},
             }
         }
         lspconfig['lua_ls'].setup {
