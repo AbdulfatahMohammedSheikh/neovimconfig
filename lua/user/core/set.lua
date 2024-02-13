@@ -15,5 +15,6 @@ opt.expandtab = true
 opt.smartindent = true
 opt.ignorecase = true
 opt.wrap = false
+opt.sidescroll=1
 
 vim.g.mapleader = " "
