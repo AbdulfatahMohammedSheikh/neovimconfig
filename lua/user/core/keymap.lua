@@ -51,7 +51,7 @@ vim.keymap.set('n', '<leader>b', ':bd<CR>')
 -- > Quickfix list
 --
 
-vim.keymap.set('n', '<leader>q', ':copen<CR>')
+vim.keymap.set('n', '<leader>qo', ':copen<CR>')
 vim.keymap.set('n', '<leader>k', ':cprev<CR>')
 vim.keymap.set('n', '<leader>j', ':cnext<CR>')
 vim.keymap.set('n', '<leader>l', ':lopen<CR>')

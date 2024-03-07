@@ -7,12 +7,12 @@ return {
     config = function()
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
-        -- TODO: remove unnassary opts from the keymas here
+        -- TODO: remove unnassary ots from the keymas here
         local opts = { noremap = true, silent = true }
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-        vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+        vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
 
         local on_attach = function(client, bufnr)
@@ -34,6 +34,11 @@ return {
             vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
             vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references, bufopts)
             vim.keymap.set('n', ';f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
+            vim.keymap.set('n', '<leader>dl', require("telescope.builtin").lsp_document_symbols, bufopts)
+            vim.keymap.set('n', '<leader>do', require("telescope.builtin").lsp_dynamic_workspace_symbols, bufopts)
+
+
 
 
             -- We can add more keymaps for spesific lsp by using the fallowing config
