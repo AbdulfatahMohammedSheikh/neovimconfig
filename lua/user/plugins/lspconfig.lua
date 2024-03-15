@@ -112,19 +112,40 @@ return {
 
         lspconfig['tailwindcss'].setup {
             capabilities = capabilities,
-            flags = lsp_flags
+            flags = lsp_flags,
+            filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+            init_options = { userLanguages = { templ = "html" } },
         }
+
 
         lspconfig['html'].setup {
             capabilities = capabilities,
-            flags = lsp_flags
-
+            flags = lsp_flags,
+            filetypes = { "html", "templ" },
         }
 
         lspconfig['dartls'].setup {
             capabilities = capabilities,
             flags = lsp_flags
 
+        }
+
+        lspconfig['templ'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags
+        }
+
+        -- to add lsp suport for [templ] files
+        vim.filetype.add({
+            extension = {
+                templ = "templ"
+            }
+        })
+
+        lspconfig['htmx'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags,
+            filetypes = { "html", "templ" },
         }
     end,
 
