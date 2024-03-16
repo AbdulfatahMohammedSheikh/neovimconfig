@@ -15,6 +15,9 @@ opt.expandtab = true
 opt.smartindent = true
 opt.ignorecase = true
 opt.wrap = false
-opt.sidescroll=1
+opt.sidescroll = 1
+
+-- makes the cursor fat not line
+opt.guicursor = ""
 
 vim.g.mapleader = " "
