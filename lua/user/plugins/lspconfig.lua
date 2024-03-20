@@ -142,11 +142,6 @@ return {
             }
         })
 
-        lspconfig['htmx'].setup {
-            capabilities = capabilities,
-            flags = lsp_flags,
-            filetypes = { "html", "templ" },
-        }
     end,
 
 }
