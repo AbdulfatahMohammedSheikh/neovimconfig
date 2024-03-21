@@ -32,7 +32,8 @@ return {
                     "windows",
                     "build",
                     "macos",
-                    "assets"
+                    "assets",
+                    "node_modules"
                 },
             },
 
