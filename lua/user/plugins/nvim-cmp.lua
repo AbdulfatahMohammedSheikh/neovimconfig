@@ -4,21 +4,21 @@ return {
     dependencies = {
         "hrsh7th/cmp-buffer", -- source for text in buffer
         "hrsh7th/cmp-path",   -- source for file system paths
-        -- "L3MON4D3/LuaSnip",         -- snippet engine
+        "L3MON4D3/LuaSnip",         -- snippet engine
         "hrsh7th/cmp-nvim-lsp",
+        "saadparwaiz1/cmp_luasnip",
         --    "rafamadriz/friendly-snippets",
     },
     config = function()
         local cmp = require("cmp")
-        -- local luasnip = require("luasnip")
+        local luasnip = require("luasnip")
         --
 
 
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    -- luasnip.lsp_expand(args.body) -- For `luasnip` users.
-                    require('snippy').expand_snippet(args.body) -- For `snippy` users.
+                    luasnip.lsp_expand(args.body) -- For `luasnip` users.
                     --
                 end,
             },
@@ -39,7 +39,7 @@ return {
                 })
             },
             sources = {
-                { name = 'snippy' }, -- For snippy users.
+                { name = "luasnip" },
                 { name = "nvim_lsp", max_item_count = 6 },
                 { name = "nvim_lua" },
                 { name = "path" },
@@ -50,11 +50,11 @@ return {
                 select = false,
             },
             -- documentation = {
-            -- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
             -- },
             -- experimental = {
-            -- 	ghost_text = true,
-            -- 	native_menu = false,
+            --     ghost_text = true,
+            --     native_menu = false,
             -- },
         })
     end,
