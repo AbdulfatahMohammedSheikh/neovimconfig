@@ -100,17 +100,3 @@ vim.keymap.set('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
 vim.keymap.set('n', '<leader>de', ':DapTerminate<CR>')
 vim.keymap.set('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
 
--- not the cleanest code but it get the job done
-vim.keymap.set('n', '<leader>wi', function()
-    local i = vim.fn.input("task : ")
-    local tag = vim.fn.input("tag : ")
-    local command = "watson start " .. i .. " +" .. tag
-    vim.fn.jobstart(command, { detach = true })
-end)
-
-vim.keymap.set('n', '<leader>wo', function()
-    vim.fn.jobstart("watson stop", { detach = true })
-end
-)
-
-vim.keymap.set('n', '<leader>wj', ':!watson status <CR>')
