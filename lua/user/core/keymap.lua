@@ -100,3 +100,13 @@ vim.keymap.set('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
 vim.keymap.set('n', '<leader>de', ':DapTerminate<CR>')
 vim.keymap.set('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
 
+
+-- remap same netrw keys
+vim.api.nvim_create_autocmd("filetype", {
+    desc = "remap keys in netrw",
+    pattern = 'netrw',
+    callback = function()
+        vim.keymap.set('n', 'n', '%' , {remap = true , buffer = true})
+        vim.keymap.set('n', 'r', 'R' , {remap = true , buffer = true})
+    end
+})
