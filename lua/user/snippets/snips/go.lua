@@ -48,14 +48,58 @@ ls.add_snippets("go", {
 
 
     s("fn", {
-        t("func "),
-        i(1, "name"),
 
-        t(" ("),
-        i(2, "args"),
-        t(" ) "),
-        t({ " {", "\t" }),
-        t(" } "),
+        c(1, {
+            sn(nil, {
+
+                t("func "),
+                i(1, "name"),
+
+                t(" ("),
+                i(2, "args"),
+                t(" ) "),
+                t({ " {", "\t" }),
+                t(" } "),
+
+            }),
+
+            sn(nil, {
+
+                t("func "),
+                i(1, "name"),
+
+                t(" ("),
+                i(2, "args"),
+                t(" ) "),
+
+                i(3, "type"),
+                t({ " {", "\t" }),
+                t(" } "),
+
+            }),
+
+            sn(nil, {
+
+                t("func "),
+
+                t(" ( "),
+                i(1, "class"),
+                t("  ) "),
+                i(2, "name"),
+
+                t(" ("),
+                i(3, "args"),
+                t(" ) "),
+
+                i(4, "type"),
+                t({ " {", "\t" }),
+                t(" } "),
+
+
+            }),
+        })
+
+
     }),
 
     s("struct", {
@@ -87,7 +131,55 @@ ls.add_snippets("go", {
     s("ifsels", {
         t("if "),
         i(1, "condition"),
-        t({ "{ ", "\t }esle {", " \t", "}" }),
+        t({ "{ ", "\t } else {", " \t", "}" }),
+    }),
+
+    s("eif", {
+        t("if "),
+        t(" nil != err "),
+        t({ "{ ", "\t " }),
+        i(1, "code"),
+        t({ "\t ", "} " }),
+    }),
+
+    s("type", {
+
+        t("type "),
+        i(1, "name"),
+        t(" "),
+        i(2, "target"),
+    }),
+
+
+    s("switch", {
+
+        t("switch "),
+        i(1, "name"),
+        t({ "{ ", "\t " }),
+        i(2, "code"),
+        t({ "\t ", "} " }),
+    }),
+
+    s("default", {
+        t("default: "),
+        i(1, "default"),
+    }),
+
+    s("case ", {
+        t("case  "),
+        i(1, "case"),
+        t("  : "),
+    }),
+
+    s("test", {
+
+        t("func Test"),
+        i(1, "name"),
+
+        t(" ( t *testing.T)"),
+        t({ " {", "\t" }),
+        t(" } "),
+
     }),
 
 }
