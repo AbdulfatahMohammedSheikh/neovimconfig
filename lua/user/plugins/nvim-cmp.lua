@@ -24,8 +24,8 @@ return {
             },
 
             mapping = {
-                ['<C-p>'] = cmp.mapping.select_prev_item(),
-                ['<C-n>'] = cmp.mapping.select_next_item(),
+                ['<S-i>'] = cmp.mapping.select_prev_item(),
+                ['<S-n>'] = cmp.mapping.select_next_item(),
                 -- Add tab support
                 ['<S-Tab>'] = cmp.mapping.select_prev_item(),
                 ['<Tab>'] = cmp.mapping.select_next_item(),
