@@ -91,6 +91,45 @@ return {
             flags = lsp_flags
 
         }
+
+        lspconfig["tsserver"].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            flags = lsp_flags
+        }
+
+
+        lspconfig['emmet_ls'].setup {
+            capabilities = capabilities,
+            filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte",
+                "pug", "typescriptreact", "vue" },
+            init_options = {
+                html = {
+                    options = {
+                        ["bem.enabled"] = true,
+                    }
+                }
+            }
+        }
+
+        lspconfig['cssls'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags
+        }
+
+        lspconfig['tailwindcss'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags,
+            filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+            init_options = { userLanguages = { templ = "html" } },
+        }
+
+
+        lspconfig['html'].setup {
+            capabilities = capabilities,
+            flags = lsp_flags,
+            filetypes = { "html", "templ" },
+        }
     end,
 
 }
