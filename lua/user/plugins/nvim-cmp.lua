@@ -4,7 +4,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-buffer", -- source for text in buffer
         "hrsh7th/cmp-path",   -- source for file system paths
-        "L3MON4D3/LuaSnip",         -- snippet engine
+        "L3MON4D3/LuaSnip",   -- snippet engine
         "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
         --    "rafamadriz/friendly-snippets",
@@ -13,7 +13,12 @@ return {
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         --
-
+        -- If you want insert `(` after select function or method item
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+            'confirm_done',
+            cmp_autopairs.on_confirm_done()
+        )
 
         cmp.setup({
             snippet = {
@@ -22,7 +27,10 @@ return {
                     --
                 end,
             },
-
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
             mapping = {
                 ['<S-i>'] = cmp.mapping.select_prev_item(),
                 ['<S-n>'] = cmp.mapping.select_next_item(),
