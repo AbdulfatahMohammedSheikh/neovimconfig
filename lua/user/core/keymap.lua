@@ -108,10 +108,5 @@ vim.api.nvim_create_autocmd("filetype", {
     callback = function()
         vim.keymap.set('n', 'n', '%', { remap = true, buffer = true })
         vim.keymap.set('n', 'r', 'R', { remap = true, buffer = true })
-
-        vim.keymap.set('n', '<S-j>', '<C-w>j')
-        vim.keymap.set('n', '<S-k>', '<C-w>k')
-        vim.keymap.set('n', '<S-l>', '<C-w>l')
-        vim.keymap.set('n', '<S-h>', '<C-w>h')
     end
 })
