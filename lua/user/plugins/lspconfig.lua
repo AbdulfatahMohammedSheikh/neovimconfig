@@ -120,7 +120,7 @@ return {
         lspconfig['tailwindcss'].setup {
             capabilities = capabilities,
             flags = lsp_flags,
-            filetypes = { "templ", "astro", "javascript", "typescript", "react"  , "typescriptreact"},
+            filetypes = { "templ", "astro","javascript","typescript","react", "typescriptreact" ,"html"},
             init_options = { userLanguages = { templ = "html" } },
         }
 

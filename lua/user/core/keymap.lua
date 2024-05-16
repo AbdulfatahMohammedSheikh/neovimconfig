@@ -94,13 +94,6 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action)
 vim.keymap.set('n', '<leader>rr', vim.lsp.buf.references)
 vim.keymap.set('n', ';f', function() vim.lsp.buf.format { async = true } end)
 
--- Dap
-vim.keymap.set('n', '<leader>d', ':DapContinue<CR>')
-vim.keymap.set('n', '<leader>dp', ':DapToggleBreakpoint<CR>')
-vim.keymap.set('n', '<leader>de', ':DapTerminate<CR>')
-vim.keymap.set('n', '<leader>dt', ':lua require("dapui").toggle()<CR>')
-
-
 -- remap same netrw keys
 vim.api.nvim_create_autocmd("filetype", {
     desc = "remap keys in netrw",
